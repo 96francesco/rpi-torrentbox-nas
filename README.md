@@ -15,4 +15,12 @@ The system combines several components to create a secure download and storage s
 3. [Backup script](https://github.com/96francesco/rpi-torrentbox-nas/blob/main/scripts/nas-backup.sh) - Daily incremental backups of NAS contents
 
 ### System services
-The functionalities were automated through **systemd** services.
+The scripts are managed through systemd services for automated execution. Example service files can be found in the [services](https://github.com/96francesco/rpi-torrentbox-nas/tree/main/services) directory.
+For example, to create and enable a service:
+
+```bash
+sudo cp service-file.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable service-file.service
+sudo systemctl start service-file.service
+```
